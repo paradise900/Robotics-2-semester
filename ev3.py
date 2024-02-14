@@ -13,7 +13,7 @@ try:
             timeNow = time.time() - timeStart
             motorA.run_direct(duty_cycle_sp = vol)
             pos = motorA. position - startPos
-            file.write(str(timeNow) + ' ' + str(pos) + ' ' + str(motorA.speed) + "\n")
+            file.write(str(timeNow) + ',' + str(pos) + ',' + str(motorA.speed) + "\n")
             if timeNow > 1:
                 mototA.run_direct(duty_cycle_sp = 0)
                 break
