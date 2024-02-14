@@ -12,3 +12,4 @@ while True:
     if currentTime > 1:
         motor_a.run_direct(duty_cycle_sp = 0)
         break
+        
