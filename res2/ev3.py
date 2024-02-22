@@ -2,10 +2,9 @@ import ev3dev2.motor as motor
 import time
 
 motorA = motor.LargeMotor('outA')
-voltages = [100, 80, 60, 40, 20, -20, -40, -60, -80, -100]
+voltages = [10, 15, 20, 25, 30, 35, 40, 45, 50]
 try:
     for vol in voltages:
-        time.sleep(2)
         timeStart = time.time()
         startPos = motorA.position
         name = "data" + str (vol)

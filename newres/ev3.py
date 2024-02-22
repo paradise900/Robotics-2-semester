@@ -5,7 +5,6 @@ motorA = motor.LargeMotor('outA')
 voltages = [100, 80, 60, 40, 20, -20, -40, -60, -80, -100]
 try:
     for vol in voltages:
-        time.sleep(2)
         timeStart = time.time()
         startPos = motorA.position
         name = "data" + str (vol)
