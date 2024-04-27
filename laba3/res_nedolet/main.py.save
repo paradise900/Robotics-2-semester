@@ -1,0 +1,26 @@
+from ev3dev2.motor import LargeMotor
+import time
+
+finish_position = 200
+motor = LargeMotor('outB')
+k_p = [0.1, 0.7, 2]
+with open("data.csv", "w") as file:
+    start_time = time.time()
+    start_position = motor.position
+    while True:
+        time_from_start = time.time() - start_time
+        position_from_start = motor.position - start_position
+        e = finish_position - position_from_start
+        U = k_p * e
+        if U > 100:
+            U = 100
+        if U < -100:
+            U = -100
+        motor.run_direct(duty_cycle_sp=U)
+        file.write("{},{},{}\n".format(time_from_start, position_from_start, motor.speed))
+        if time_from_start > 7:
+            break
+    file.write("end\n")
+
+
+

@@ -1,0 +1,18 @@
+k_p = 0.5
+a.p_reg(k_p)
+
+k_p = 0.3
+k_i = -0.05
+time.sleep(1)
+a.pi_reg(k_p, k_i)
+
+k_p = 0.3
+k_d = -0.05
+time.sleep(1)
+a.pd_reg(k_p, k_d)
+
+k_d = -0.1
+k_i = -0.1
+k_p = 0.3
+time.sleep(1)
+a.pid_reg(k_p, k_i, k_d)
