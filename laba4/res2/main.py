@@ -20,6 +20,11 @@ def check_angel(angel):
         return angel
 
 
+def change_coordinates(x_cur, y_cur, x_goal, y_goal):
+    return (y_goal - y_cur, x_goal - x_cur)
+
+
+
 DOTS = [(1, 0), (0, 1), (-1, 0), (0, -1), (1, 0)]
 RADIUS = 0.041
 BASE = 0.165
@@ -67,8 +72,9 @@ try:
                 file.close()
                 i += 1
                 break
+
 except:
-    print('Error')
+    print('asdlkjdklajdalskd')
     motorleft.run_direct(duty_cycle_sp = 0)
     motorright.run_direct(duty_cycle_sp = 0)
     file.close()
